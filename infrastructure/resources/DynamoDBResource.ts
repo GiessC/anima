@@ -14,7 +14,7 @@ export default class DynamoDBResource {
         tableName: string,
         settings: Settings,
         props?: TablePropsV2,
-    ) {
+    ): TableV2 {
         return new TableV2(scope, id, {
             ...props,
             partitionKey: { name: 'pk', type: AttributeType.STRING },

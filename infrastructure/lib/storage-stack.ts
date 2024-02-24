@@ -7,7 +7,7 @@ import DynamoDBResource from '../resources/DynamoDBResource';
 
 export interface StorageStackProps extends StackProps {}
 
-export class StorageStack extends Stack {
+export default class StorageStack extends Stack {
     constructor(
         scope: Construct,
         id: string,
@@ -20,7 +20,7 @@ export class StorageStack extends Stack {
     }
 
     private createPictureBucket(id: string, settings: Settings) {
-        const bucketId = `${id}-Pictures-${settings.environment}`;
+        const bucketId = `${id}-Pictures`;
         return S3Resource.createS3Bucket(
             this,
             bucketId,
@@ -30,7 +30,7 @@ export class StorageStack extends Stack {
     }
 
     private createUserTable(id: string, settings: Settings) {
-        const tableId = `${id}-Users-${settings.environment}`;
+        const tableId = `${id}-Users`;
         return DynamoDBResource.createDynamoTable(
             this,
             tableId,

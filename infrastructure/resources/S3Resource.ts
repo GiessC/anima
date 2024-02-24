@@ -9,7 +9,7 @@ export default class S3Resource {
         name: string,
         removalPolicy: RemovalPolicy = RemovalPolicy.RETAIN,
         props?: BucketProps,
-    ) {
+    ): Bucket {
         return new Bucket(scope, id, {
             ...props,
             bucketName: name,
