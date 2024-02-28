@@ -2,7 +2,7 @@ import { NestFactory } from '@nestjs/core';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import cors from 'cors';
 import express from 'express';
-import settings from './config/Settings';
+import settings from './config/settings';
 import { MatchModule } from './features/matches/matches.module';
 
 const bootstrap = async () => {
